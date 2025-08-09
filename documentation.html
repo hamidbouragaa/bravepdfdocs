@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BravePDF - AI-Powered PDF Tool Suite Documentation</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      line-height: 1.6;
+      color: #222;
+      background: #fff;
+    }
+    h1, h2, h3 {
+      color: #0070f3;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    a {
+      color: #0070f3;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    pre {
+      background: #f6f8fa;
+      border: 1px solid #ddd;
+      padding: 1rem;
+      overflow-x: auto;
+      border-radius: 5px;
+      font-size: 0.9rem;
+    }
+    code {
+      font-family: "Source Code Pro", monospace, monospace;
+      background: #f6f8fa;
+      padding: 0.2rem 0.4rem;
+      border-radius: 3px;
+      font-size: 0.9rem;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
+    ul {
+      margin-left: 1.2rem;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #eee;
+      margin: 2rem 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>BravePDF - AI-Powered PDF Tool Suite</h1>
+
+  <p>
+    BravePDF is a comprehensive, AI-powered web application for all your PDF needs.
+    Built with a modern tech stack, it provides a suite of powerful tools ranging from
+    document conversion and optimization to intelligent analysis and interaction.
+    This source code provides a ready-to-deploy, subscription-based SaaS application
+    that you can sell to your own customers.
+  </p>
+
+  <a href="https://bravepdf.com" target="_blank" rel="noopener">
+    <img
+      src="mainscreen.png"
+      alt="BravePDF Demo"
+    />
+  </a>
+  <br>
+  <h3>User Dashboard</h3>
+    <a href="https://bravepdf.com" target="_blank" rel="noopener">
+    <img
+      src="userdashboard.png"
+      alt="BravePDF Demo"
+    />
+  </a>
+
+  <hr />
+
+  <h2>Features</h2>
+  <ul>
+    <li><strong>AI-Powered Tools</strong>: Summarize, translate, chat with, analyze, and generate PDFs using AI. Includes an OCR scanner and semantic search.</li>
+    <li><strong>Convert &amp; Create</strong>: Convert PDFs to and from formats like Word, PowerPoint, Image, HTML, Text, CSV, XML, and EPUB.</li>
+    <li><strong>Organize &amp; Optimize</strong>: Merge, split, compress, rotate, reorder pages, manage bookmarks, and compare PDF versions.</li>
+    <li><strong>Edit &amp; Sign</strong>: eSign documents, crop pages, remove backgrounds, create and fill forms, and redact sensitive information.</li>
+    <li><strong>Security</strong>: Protect with passwords, unlock secured files, add watermarks, and scan for viruses.</li>
+    <li><strong>Business &amp; Productivity</strong>: Generate professional invoices, reports, certificates, and QR codes.</li>
+    <li><strong>SaaS &amp; Monetization</strong>:
+      <ul>
+        <li>User authentication (Login/Signup).</li>
+        <li>Multi-tier subscription plans (Free, Pro, Pro+).</li>
+        <li>Seamless checkout process powered by Stripe.</li>
+        <li>Feature gating based on subscription plans.</li>
+        <li>User dashboard to manage subscriptions and usage.</li>
+        <li>Superadmin panel for site management.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <hr />
+
+  <h2>Tech Stack</h2>
+  <ul>
+    <li><strong>Framework</strong>: <a href="https://nextjs.org/" target="_blank" rel="noopener">Next.js</a> (App Router)</li>
+    <li><strong>Styling</strong>: <a href="https://tailwindcss.com/" target="_blank" rel="noopener">Tailwind CSS</a> &amp; <a href="https://ui.shadcn.com/" target="_blank" rel="noopener">ShadCN UI</a></li>
+    <li><strong>AI Backend</strong>: <a href="https://firebase.google.com/docs/genkit" target="_blank" rel="noopener">Google AI &amp; Genkit</a></li>
+    <li><strong>Database &amp; Auth</strong>: <a href="https://firebase.google.com/" target="_blank" rel="noopener">Firebase</a> (Authentication &amp; Firestore)</li>
+    <li><strong>Payments</strong>: <a href="https://stripe.com/" target="_blank" rel="noopener">Stripe</a></li>
+    <li><strong>Deployment</strong>: <a href="https://vercel.com/" target="_blank" rel="noopener">Vercel</a> (Recommended)</li>
+  </ul>
+
+  <hr />
+
+  <h2>Prerequisites</h2>
+  <p>Before you begin, ensure you have the following accounts and tools set up:</p>
+  <ol>
+    <li><strong>Node.js</strong>: v18.x or later.</li>
+    <li><strong>Firebase Account</strong>: To manage users, data, and service credentials.</li>
+    <li><strong>Google AI (Gemini) API Key</strong>: To power the AI features.</li>
+    <li><strong>Stripe Account</strong>: To process subscription payments.</li>
+    <li><strong>Vercel Account</strong>: For easy deployment and hosting.</li>
+  </ol>
+
+  <hr />
+
+  <h2>.env Configuration</h2>
+  <p>
+    Rename the <code>.env.example</code> file to <code>.env.local</code> and fill in your actual environment variables.<br />
+    <strong>Do NOT commit <code>.env.local</code> to version control.</strong>
+  </p>
+  <pre><code># --- Firebase Client Configuration ---
+NEXT_PUBLIC_FIREBASE_API_KEY="AIza..."
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN="your-project-id.firebaseapp.com"
+NEXT_PUBLIC_FIREBASE_PROJECT_ID="your-project-id"
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET="your-project-id.appspot.com"
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID="..."
+NEXT_PUBLIC_FIREBASE_APP_ID="1:..."
+
+# --- Firebase Admin/Server Configuration ---
+FIREBASE_PROJECT_ID="your-project-id"
+FIREBASE_CLIENT_EMAIL="firebase-adminsdk-xxx@your-project-id.iam.gserviceaccount.com"
+FIREBASE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n"
+
+# --- Stripe Configuration ---
+STRIPE_SECRET_KEY="sk_test_..."
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY="pk_test_..."
+STRIPE_WEBHOOK_SECRET="whsec_..."
+
+# --- Google AI (Gemini) Configuration ---
+GEMINI_API_KEY="AIza..."
+</code></pre>
+
+  <hr />
+
+  <h2>Step-by-Step Setup Instructions</h2>
+
+  <h3>1. Initial Project Setup</h3>
+  <ol>
+    <li>Download and extract the source code folder.</li>
+    <li>Open your terminal, navigate into the project directory, and install dependencies:
+      <pre><code>yarn install</code></pre>
+    </li>
+    <li>Rename <code>.env.example</code> to <code>.env.local</code>:
+      <pre><code>mv .env.example .env.local</code></pre>
+    </li>
+    <li>Fill in your <code>.env.local</code> file with your actual values (see <em>.env Configuration</em> section above).</li>
+  </ol>
+
+  <h3>2. Firebase Configuration</h3>
+  <ol>
+    <li><strong>Create a Firebase Project:</strong> Go to the <a href="https://console.firebase.google.com/" target="_blank" rel="noopener">Firebase Console</a> and create a new project.</li>
+    <li><strong>Create a Web App:</strong>
+      <ul>
+        <li>In your project dashboard, click the Web icon (&lt;/&gt;) to create a new web app.</li>
+        <li>Give it a nickname (e.g., "BravePDF Web").</li>
+        <li>Copy the <code>firebaseConfig</code> object values into your <code>.env.local</code> under <code>NEXT_PUBLIC_FIREBASE_*</code> variables.</li>
+      </ul>
+    </li>
+    <li><strong>Enable Firestore &amp; Authentication:</strong>
+      <ul>
+        <li>Create Firestore database in <em>Production mode</em> and select your preferred location.</li>
+        <li>Enable Email/Password sign-in in Authentication settings.</li>
+      </ul>
+    </li>
+    <li><strong>Create a Service Account:</strong>
+      <ul>
+        <li>Go to <em>Project settings &gt; Service accounts</em>, generate new private key, download JSON.</li>
+        <li>Copy <code>project_id</code>, <code>client_email</code>, and <code>private_key</code> into <code>.env.local</code>.</li>
+        <li>Format <code>FIREBASE_PRIVATE_KEY</code> correctly with double quotes and <code>\n</code> for new lines.</li>
+      </ul>
+    </li>
+  </ol>
+
+  <h3>3. Stripe Configuration</h3>
+  <ol>
+    <li><strong>Create Products &amp; Prices:</strong>
+      <ul>
+        <li>Create "Pro" and "Pro+" products with recurring monthly prices in Stripe dashboard.</li>
+        <li>Copy their Price IDs and update <code>src/app/pricing/page.tsx</code> accordingly.</li>
+      </ul>
+    </li>
+    <li><strong>Get API Keys:</strong>
+      <ul>
+        <li>Copy Publishable and Secret API keys into <code>.env.local</code>.</li>
+      </ul>
+    </li>
+    <li><strong>Set Up Webhook:</strong>
+      <ul>
+        <li>Add webhook endpoint: <code>https://&lt;YOUR_VERCEL_URL&gt;/api/stripe-webhook</code>.</li>
+        <li>Add events: <code>checkout.session.completed</code>, <code>invoice.payment_succeeded</code>.</li>
+        <li>Copy webhook signing secret into <code>STRIPE_WEBHOOK_SECRET</code>.</li>
+      </ul>
+    </li>
+  </ol>
+
+  <h3>4. Google AI (Gemini) API Key</h3>
+  <ol>
+    <li>Go to <a href="https://aistudio.google.com/" target="_blank" rel="noopener">Google AI Studio</a>.</li>
+    <li>Create and copy your API key into <code>GEMINI_API_KEY</code> in <code>.env.local</code>.</li>
+  </ol>
+
+  <hr />
+
+  <h2>Superadmin Access</h2>
+  <p>To gain superadmin access to manage users and analytics:</p>
+  <ol>
+    <li>Sign up for an account using the app's signup page.</li>
+    <li>Find your user UID in Firebase Authentication section.</li>
+    <li>In Firestore database, update your user document’s <code>role</code> field from <code>"user"</code> to <code>"superadmin"</code>.</li>
+    <li>Log out and back in; you will now see admin panel access.</li>
+  </ol>
+
+  <hr />
+
+  <h2>Deployment to Vercel or Netlify</h2>
+  <p>Recommended hosting is <a href="https://vercel.com/" target="_blank" rel="noopener">Vercel</a>, but you may also use <a href="https://www.netlify.com/" target="_blank" rel="noopener">Netlify</a> or any other platform that supports Next.js.</p>
+  <ol>
+    <li>Push your source code to a GitHub repository.</li>
+    <li>Import the repo into your Vercel or Netlify account.</li>
+    <li>Configure environment variables on your hosting platform exactly as in your local <code>.env.local</code> file.</li>
+    <li>Trigger a deploy/build. The platform will install dependencies using <code>yarn</code> automatically.</li>
+    <li>After deployment, update your Stripe webhook endpoint with the production URL provided by your host.</li>
+  </ol>
+
+  <hr />
+
+  <h2>Local Development</h2>
+  <p>To run the application locally:</p>
+  <pre><code>yarn dev</code></pre>
+  <p>This will start the app on <code>http://localhost:9002</code>.</p>
+
+  <hr />
+  <p><em>Congratulations! Your AI-powered PDF SaaS is now fully configured and ready to be marketed.</em></p>
+</body>
+</html>
+
